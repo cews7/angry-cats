@@ -1,6 +1,0 @@
-res://game.tscn
-res://Entities/Projectiles/Regular Cat/regular_cat.tscn
-res://Stages/ground.tscn
-res://UI/Title Menu/title_menu.tscn
-res://UI/Select Level Menu/select_level_menu.tscn
-res://UI/menu_manager.gd
