@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://k4ndjbjqjarh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loee1"]
+size = Vector2(40, 40)
+
+[node name="RegularCat" type="RigidBody2D"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 379.0
+offset_top = 202.0
+offset_right = 419.0
+offset_bottom = 242.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShapeD2" type="CollisionShape2D" parent="."]
+position = Vector2(399, 222)
+shape = SubResource("RectangleShape2D_loee1")
