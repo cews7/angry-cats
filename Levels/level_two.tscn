@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5j164gf2qjh0"]
+
+[ext_resource type="PackedScene" uid="uid://c5pfcm13kpqnq" path="res://Stages/ground.tscn" id="1_xtrld"]
+[ext_resource type="PackedScene" uid="uid://cg2ob05ymsfu3" path="res://Entities/Projectiles/Fat Cat/fat_cat.tscn" id="2_tyvug"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kv3oj"]
+
+[node name="LevelTwo" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_xtrld")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape2D_kv3oj")
+
+[node name="FatCat" parent="." instance=ExtResource("2_tyvug")]

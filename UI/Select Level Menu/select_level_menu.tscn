@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://brmpexnecc4eg"]
+[gd_scene load_steps=2 format=3 uid="uid://brmpexnecc4eg"]
+
+[ext_resource type="Script" path="res://UI/Select Level Menu/select_level_menu.gd" id="1_cn2oe"]
 
 [node name="SelectLevelMenu" type="Control"]
 layout_mode = 3
@@ -7,25 +9,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cn2oe")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = 425.0
-offset_top = 193.0
-offset_right = 619.0
-offset_bottom = 285.0
+offset_left = 457.0
+offset_top = 265.0
+offset_right = 651.0
+offset_bottom = 341.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="BoxContainer/HBoxContainer"]
+[node name="LevelOneButton" type="Button" parent="BoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Level 1"
+text = "level 1"
 
-[node name="Button2" type="Button" parent="BoxContainer/HBoxContainer"]
+[node name="LevelTwoButton" type="Button" parent="BoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Level 2"
+text = "level 2"
 
-[node name="Button3" type="Button" parent="BoxContainer/HBoxContainer"]
+[node name="LevelThreeButton" type="Button" parent="BoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Level 3"
+text = "level 3"

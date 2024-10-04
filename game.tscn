@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkagguulqfca8"]
+[gd_scene load_steps=3 format=3 uid="uid://bkagguulqfca8"]
 
-[ext_resource type="PackedScene" uid="uid://dey33566xm0wc" path="res://UI/Title Menu/title_menu.tscn" id="1_n8r1w"]
+[ext_resource type="Script" path="res://game.gd" id="1_2gbkl"]
+[ext_resource type="Script" path="res://UI/menu_manager.gd" id="1_mtgos"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_2gbkl")
 
 [node name="MenuManager" type="Node" parent="."]
-
-[node name="TitleMenu" parent="MenuManager" instance=ExtResource("1_n8r1w")]
+unique_name_in_owner = true
+script = ExtResource("1_mtgos")
