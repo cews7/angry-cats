@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://cl705vlyukii7"]
 
+[ext_resource type="PackedScene" uid="uid://cj1kebq0withr" path="res://Entities/EntityGroups/ProjectileComponents/projectile_components.tscn" id="1_aqe6j"]
 [ext_resource type="PackedScene" uid="uid://c5pfcm13kpqnq" path="res://Stages/ground.tscn" id="1_hwscf"]
-[ext_resource type="PackedScene" uid="uid://b0vvilumhx7ss" path="res://Entities/Projectiles/Regular Cat/regular_cat.tscn" id="2_asorg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kv3oj"]
 
 [node name="LevelOne" type="Node2D"]
 
+[node name="ProjectileComponents" parent="." instance=ExtResource("1_aqe6j")]
+
 [node name="Ground" parent="." instance=ExtResource("1_hwscf")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 shape = SubResource("WorldBoundaryShape2D_kv3oj")
-
-[node name="RegularCat" parent="." instance=ExtResource("2_asorg")]

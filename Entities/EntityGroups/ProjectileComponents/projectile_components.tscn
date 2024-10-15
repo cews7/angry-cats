@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj1kebq0withr"]
+
+[ext_resource type="Script" path="res://Entities/EntityGroups/ProjectileComponents/projectile_components.gd" id="1_t7m3t"]
+[ext_resource type="PackedScene" uid="uid://bq1vdwo66apyw" path="res://Entities/Slingshot/slingshot.tscn" id="2_c1i0n"]
+[ext_resource type="PackedScene" uid="uid://b0vvilumhx7ss" path="res://Entities/Projectiles/Regular Cat/regular_cat.tscn" id="3_35sny"]
+[ext_resource type="PackedScene" uid="uid://c5pfcm13kpqnq" path="res://Stages/ground.tscn" id="6_eb4vg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_35aly"]
+bounce = 0.5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_050eh"]
+
+[node name="ProjectileComponents" type="Node2D"]
+script = ExtResource("1_t7m3t")
+
+[node name="ProjectileLoadTarget" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(221, 520)
+
+[node name="Slingshot" parent="." instance=ExtResource("2_c1i0n")]
+unique_name_in_owner = true
+position = Vector2(209, 519)
+
+[node name="RegularCat" parent="." instance=ExtResource("3_35sny")]
+unique_name_in_owner = true
+position = Vector2(122, 618)
+physics_material_override = SubResource("PhysicsMaterial_35aly")
+
+[node name="GroundTemp" parent="." instance=ExtResource("6_eb4vg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundTemp"]
+shape = SubResource("WorldBoundaryShape2D_050eh")
