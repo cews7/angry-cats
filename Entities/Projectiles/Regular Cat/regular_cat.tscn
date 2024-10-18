@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0vvilumhx7ss"]
+[gd_scene load_steps=4 format=3 uid="uid://b0vvilumhx7ss"]
 
-[ext_resource type="Texture2D" uid="uid://c5oer063qi2r" path="res://Assets/Sprite-0001.png" id="1_8hkr7"]
+[ext_resource type="Script" path="res://Entities/Projectiles/Regular Cat/regular_cat.gd" id="1_5kxkx"]
+[ext_resource type="Texture2D" uid="uid://c5oer063qi2r" path="res://Entities/Projectiles/Regular Cat/Sprite-0001.png" id="1_fn3tg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_no3ut"]
 radius = 15.0333
@@ -8,6 +9,9 @@ radius = 15.0333
 [node name="RegularCat" type="RigidBody2D"]
 position = Vector2(21, 21)
 input_pickable = true
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_5kxkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -16,4 +20,4 @@ shape = SubResource("CircleShape2D_no3ut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -2)
-texture = ExtResource("1_8hkr7")
+texture = ExtResource("1_fn3tg")
