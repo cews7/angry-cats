@@ -12,6 +12,9 @@ mass = 0.01
 max_contacts_reported = 3
 contact_monitor = true
 script = ExtResource("1_25ulx")
+base_damage = null
+mass_factor = null
+velocity_factor = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)

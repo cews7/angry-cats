@@ -11,6 +11,7 @@ max_contacts_reported = 3
 contact_monitor = true
 script = ExtResource("1_da6vv")
 topple_sensitivity = null
+min_impact_force = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g13kj")

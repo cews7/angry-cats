@@ -9,6 +9,8 @@ var impact_modifier: float = 1.0
 var max_velocity: float = 200.0
 var launch_force_multiplier: float = 1.0
 
+var bodies_hit: Array = []
+
 func _ready():
     set_properties()
     body_entered.connect(_on_body_entered)
@@ -23,6 +25,9 @@ func _integrate_forces(state):
         state.linear_velocity = current_velocity.normalized() * max_velocity
 
 func _on_body_entered(body):
+    if body in bodies_hit:
+        return
+    bodies_hit.append(body)
     var impact_force = calculate_impact_force()
     apply_impact(body, impact_force)
 
@@ -34,9 +39,6 @@ func calculate_impact_force() -> float:
     return base_impact + mass_impact + velocity_impact
 
 func apply_impact(body: Node, force: float):
-    if body.has_method("take_damage"):
-        body.take_damage(force)
-    
     if body is RigidBody2D:
         var impact_direction = linear_velocity.normalized()
         var impulse = impact_direction * force
@@ -53,3 +55,7 @@ func launch(direction: Vector2, power: float):
     if launch_velocity.length() > max_velocity:
         launch_velocity = launch_velocity.normalized() * max_velocity
     linear_velocity = launch_velocity
+
+func _physics_process(_delta):
+    if linear_velocity.length() < 1.0:
+        bodies_hit.clear()

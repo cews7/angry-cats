@@ -4,14 +4,15 @@ var obstacles_hit = 0
 var max_obstacles_before_bounce = 3
 
 func set_properties():
+	add_to_group("projectiles")  # Add this line
 	mass = 10.0
 	impact_modifier = 2.0
-	max_velocity = 800.0  # Increased from previous value
-	launch_force_multiplier = 5.5  # Increased to give FatCat extra launch power
+	max_velocity = 960.0  # Increased from 800.0 (20% increase)
+	launch_force_multiplier = 6.6  # Increased from 5.5 (20% increase)
 
-	base_damage = 15.0  # Increased base damage
-	mass_factor = 1.2  # Slightly increased mass factor
-	velocity_factor = 0.015  # Slightly increased velocity factor
+	base_damage = 15.0
+	mass_factor = 1.2
+	velocity_factor = 0.015
 
 	# Adjust physics material for less bouncing
 	var physics_material = PhysicsMaterial.new()

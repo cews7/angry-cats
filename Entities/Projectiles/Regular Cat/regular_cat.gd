@@ -4,10 +4,11 @@ var obstacles_hit = 0
 var max_obstacles_before_bounce = 3
 
 func set_properties():
-	mass = 5.0
-	impact_modifier = 1.0
-	max_velocity = 1200.0  # Higher max velocity than FatCat
-	launch_force_multiplier = 4.0  # Less than FatCat, but still powerful
+	add_to_group("projectiles")  # Add this line
+	mass = 6.0  # Increased from 5.0
+	impact_modifier = 1.2  # Increased from 1.0
+	max_velocity = 1600.0  # Increased from 1200.0 (about 33% increase)
+	launch_force_multiplier = 5.3  # Increased from 4.0 (about 33% increase)
 
 	base_damage = 10.0  # Standard base damage
 	mass_factor = 1.0  # Standard mass factor

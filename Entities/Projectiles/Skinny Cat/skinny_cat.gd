@@ -4,8 +4,9 @@ var obstacles_hit = 0
 var max_obstacles_before_bounce = 3
 
 func set_properties():
-    mass = 2.0
-    impact_modifier = 0.8
+    add_to_group("projectiles")  # Add this line
+    mass = 1.0
+    impact_modifier = 0.5
     max_velocity = 1800.0
     launch_force_multiplier = 7.5
     
@@ -18,6 +19,10 @@ func set_properties():
     physics_material.bounce = 0.1
     physics_material.friction = 0.5
     set_physics_material_override(physics_material)
+
+    # Enable contact monitoring for collision detection
+    contact_monitor = true
+    max_contacts_reported = 1
 
 func _on_body_entered(body):
     super._on_body_entered(body)
