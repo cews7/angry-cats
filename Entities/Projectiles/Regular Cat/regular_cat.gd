@@ -23,16 +23,11 @@ func set_properties():
 func _on_body_entered(body):
 	super._on_body_entered(body)
 	if body.is_in_group("obstacles"):
-		obstacles_hit += 1
-		if obstacles_hit >= max_obstacles_before_bounce:
-			# Enable normal bouncing behavior
-			var physics_material = PhysicsMaterial.new()
-			physics_material.bounce = 0.5
-			physics_material.friction = 0.2
-			set_physics_material_override(physics_material)
-		else:
-			# Slow down the projectile
-			linear_velocity *= 0.8
+		# Enable bouncing behavior based on pillar's bounce value
+		var physics_material = PhysicsMaterial.new()
+		physics_material.bounce = body.get_bounce_value()
+		physics_material.friction = 0.2
+		set_physics_material_override(physics_material)
 
 func _integrate_forces(state):
 	super._integrate_forces(state)

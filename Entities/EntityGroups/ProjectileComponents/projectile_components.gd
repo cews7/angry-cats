@@ -1,12 +1,11 @@
 extends Node2D
 
-@onready var projectiles: Array[RigidBody2D] = [$FatCat, $RegularCat, $SkinnyCat]
+@onready var projectiles: Array[RigidBody2D] = []
 @onready var sling: Node2D = $Slingshot
 @onready var pull_line: Line2D = $PullLine
 
 var active_projectile: RigidBody2D = null
 var dragging = false
-# var release_power = 15  # Adjust this to change the launch power
 var max_drag_distance = 100  # Maximum distance the projectile can be dragged
 
 func _ready():
@@ -20,6 +19,16 @@ func _unhandled_input(event):
             handle_mouse_press()
         elif event.is_released():
             handle_mouse_release()
+
+func add_projectile(projectile: RigidBody2D):
+    projectiles.append(projectile)
+    projectile.freeze = true
+    
+    # Calculate position for the new projectile
+    var spacing = 32  # Adjust this value to control space between projectiles
+    var start_x = sling.global_position.x - spacing
+    var index = projectiles.size() - 1
+    projectile.global_position = Vector2(start_x - (spacing * index), sling.global_position.y + 110)
 
 func handle_mouse_press():
     var mouse_position = get_global_mouse_position()

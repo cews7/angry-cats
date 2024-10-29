@@ -1,28 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj1kebq0withr"]
+[gd_scene load_steps=3 format=3 uid="uid://cj1kebq0withr"]
 
 [ext_resource type="Script" path="res://Entities/EntityGroups/ProjectileComponents/projectile_components.gd" id="1_t7m3t"]
 [ext_resource type="PackedScene" uid="uid://bq1vdwo66apyw" path="res://Entities/Slingshot/slingshot.tscn" id="2_c1i0n"]
-[ext_resource type="PackedScene" uid="uid://b0vvilumhx7ss" path="res://Entities/Projectiles/Regular Cat/regular_cat.tscn" id="3_35sny"]
-[ext_resource type="PackedScene" uid="uid://cg2ob05ymsfu3" path="res://Entities/Projectiles/Fat Cat/fat_cat.tscn" id="3_d8yiw"]
-[ext_resource type="PackedScene" uid="uid://buu4ts1qlyts1" path="res://Entities/Projectiles/Skinny Cat/skinny_cat.tscn" id="4_htwy7"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_35aly"]
-bounce = 0.5
 
 [node name="ProjectileComponents" type="Node2D"]
 script = ExtResource("1_t7m3t")
 
 [node name="Slingshot" parent="." instance=ExtResource("2_c1i0n")]
 position = Vector2(209, 519)
-
-[node name="FatCat" parent="." instance=ExtResource("3_d8yiw")]
-position = Vector2(168, 617)
-
-[node name="SkinnyCat" parent="." instance=ExtResource("4_htwy7")]
-position = Vector2(73, 616)
-
-[node name="RegularCat" parent="." instance=ExtResource("3_35sny")]
-position = Vector2(122, 618)
-physics_material_override = SubResource("PhysicsMaterial_35aly")
 
 [node name="PullLine" type="Line2D" parent="."]

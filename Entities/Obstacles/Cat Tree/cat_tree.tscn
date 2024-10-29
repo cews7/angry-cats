@@ -1,20 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjullun5pauql"]
+[gd_scene load_steps=6 format=3 uid="uid://bjullun5pauql"]
 
 [ext_resource type="Script" path="res://Entities/Obstacles/Cat Tree/cat_tree.gd" id="1_da6vv"]
 [ext_resource type="Texture2D" uid="uid://dp73d0a8s1fog" path="res://Entities/Obstacles/placeholder-obstacle.png" id="1_yxocs"]
+[ext_resource type="PackedScene" uid="uid://ck1pw3x6y8hj5" path="res://UI/Physics Controls/pillar_control.tscn" id="3_qppro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g13kj"]
 size = Vector2(18, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kygmb"]
+size = Vector2(20, 6)
 
 [node name="CatTree" type="RigidBody2D"]
 max_contacts_reported = 3
 contact_monitor = true
 script = ExtResource("1_da6vv")
-topple_sensitivity = null
-min_impact_force = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g13kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yxocs")
+
+[node name="BounceArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceArea"]
+position = Vector2(0, -47)
+shape = SubResource("RectangleShape2D_kygmb")
+
+[node name="PillarControl" parent="." instance=ExtResource("3_qppro")]
+position = Vector2(-8, -17)

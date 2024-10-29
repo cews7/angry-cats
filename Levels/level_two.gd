@@ -5,7 +5,7 @@ extends Node2D
 @onready var projectile_component: Node2D = $ProjectileComponents
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    for i in range(5):
+    for i in range(4):
         var projectile_instance = regular_projectile.instantiate()
         projectile_component.add_child(projectile_instance)
         projectile_component.add_projectile(projectile_instance)

@@ -12,7 +12,7 @@
 script = ExtResource("1_j6t3j")
 
 [node name="ProjectileComponents" parent="." instance=ExtResource("1_aqe6j")]
-position = Vector2(121, 303)
+position = Vector2(-21, 299)
 
 [node name="Ground" parent="." instance=ExtResource("1_hwscf")]
 position = Vector2(738, 944)
@@ -24,30 +24,17 @@ shape = SubResource("WorldBoundaryShape2D_kv3oj")
 offset_right = 8.0
 offset_bottom = 8.0
 text = "reset scene"
+metadata/_edit_use_anchors_ = true
 
 [node name="Obstacles" type="Node" parent="."]
 
-[node name="CatTree" parent="Obstacles" instance=ExtResource("2_eeq0c")]
-position = Vector2(678, 677)
-topple_sensitivity = null
-min_impact_force = null
-
 [node name="CatTree2" parent="Obstacles" instance=ExtResource("2_eeq0c")]
-position = Vector2(585, 808)
-topple_sensitivity = null
-min_impact_force = null
+position = Vector2(177, 708)
 
 [node name="CatTree3" parent="Obstacles" instance=ExtResource("2_eeq0c")]
-position = Vector2(635, 737)
-topple_sensitivity = null
-min_impact_force = null
-
-[node name="CatTree4" parent="Obstacles" instance=ExtResource("2_eeq0c")]
-position = Vector2(720, 610)
-topple_sensitivity = null
-min_impact_force = null
+position = Vector2(301, 817)
 
 [node name="Targets" type="Node" parent="."]
 
 [node name="Plushy" parent="Targets" instance=ExtResource("1_qswqq")]
-position = Vector2(877, 567)
+position = Vector2(539, 601)

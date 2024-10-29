@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck1pw3x6y8hj5"]
+
+[ext_resource type="Script" path="res://UI/Physics Controls/pillar_control.gd" id="1_k5hvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnoij"]
+size = Vector2(12, 64)
+
+[node name="PillarControl" type="Node2D"]
+script = ExtResource("1_k5hvq")
+
+[node name="BounceSlider" type="VSlider" parent="."]
+offset_right = 16.0
+offset_bottom = 62.0
+
+[node name="BounceValue" type="Label" parent="."]
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 73.0
+offset_bottom = 41.0
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(8, 30)
+shape = SubResource("RectangleShape2D_nnoij")
