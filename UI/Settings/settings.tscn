@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://pfiqypg2dknv"]
+
+[ext_resource type="Script" path="res://UI/Settings/settings.gd" id="1_ldhmo"]
+[ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="1_vo6af"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vo6af")
+script = ExtResource("1_ldhmo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 218.0
+offset_bottom = 33.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.085
+anchor_bottom = 0.109
+offset_right = 103.8
+offset_bottom = 35.45
+
+[node name="BackgroundColor" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RLabel" type="Label" parent="VBoxContainer/RContainer"]
+layout_mode = 2
+text = "R:"
+
+[node name="RSlider" type="HSlider" parent="VBoxContainer/RContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="RValue" type="Label" parent="VBoxContainer/RContainer"]
+layout_mode = 2
+
+[node name="GContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GLabel" type="Label" parent="VBoxContainer/GContainer"]
+layout_mode = 2
+text = "G:"
+
+[node name="GSlider" type="HSlider" parent="VBoxContainer/GContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.0
+
+[node name="GValue" type="Label" parent="VBoxContainer/GContainer"]
+layout_mode = 2
+
+[node name="BContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BLabel" type="Label" parent="VBoxContainer/BContainer"]
+layout_mode = 2
+text = "B:"
+
+[node name="BSlider" type="HSlider" parent="VBoxContainer/BContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.0
+
+[node name="BValue" type="Label" parent="VBoxContainer/BContainer"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 149.0
+offset_right = 436.0
+offset_bottom = 189.0
+text = "Save"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 149.0
+offset_right = 324.0
+offset_bottom = 189.0
+text = "Back to Menu
+"

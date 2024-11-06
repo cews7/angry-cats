@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dih5q8sqp1gd7"]
+
+[node name="Score" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"

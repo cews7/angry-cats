@@ -4,7 +4,7 @@ signal bounce_value_changed(value: float, instance_id: int)
 
 var my_instance_id: int
 @onready var bounce_slider: VSlider = $BounceSlider
-@onready var bounce_value_label: Label = $BounceValue
+@onready var bounce_value_label: RichTextLabel = $BounceValue
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var current_bounce: float = 0.0
 @onready var min_bounce: float = 0.0
@@ -54,13 +54,10 @@ func _unhandled_input(event: InputEvent) -> void:
         else:
             _end_drag()
     elif event is InputEventMouseMotion and is_dragging:
-        print("dragging1")
         _handle_drag(event.position)
 
 func _on_slider_value_changed(value: float) -> void:
     current_bounce = value
-    print("current_bounce: ", value)
-    print("my_instance_id: ", my_instance_id)
     bounce_value_changed.emit(current_bounce / 100.0, my_instance_id)  # Convert to 0-1 range when emitting
     update_bounce_display()
 func _start_drag(pos: Vector2) -> void:
@@ -75,7 +72,6 @@ func _end_drag() -> void:
 func _handle_drag(pos: Vector2) -> void:
     if not is_dragging:
         return
-    print("dragging2")
     var delta = (mouse_start_pos.y - pos.y) / 100.0 * 100.0  # Adjust delta for percentage scale
     var new_bounce = clamp(initial_bounce + delta, min_bounce, max_bounce)
     current_bounce = new_bounce
@@ -93,4 +89,4 @@ func set_bounce_value(value: float) -> void:
 
 func update_bounce_display() -> void:
     # current_bounce is already in percentage (0-100), so use it directly
-    bounce_value_label.text = str(current_bounce) + "%"
+    bounce_value_label.text = "[color=white]" + str(current_bounce) + "%[/color]"

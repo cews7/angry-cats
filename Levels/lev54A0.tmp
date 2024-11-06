@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://Levels/level_one.gd" id="1_j6t3j"]
 [ext_resource type="PackedScene" uid="uid://beldgl7b7felu" path="res://Entities/Targets/Plushy/plushy.tscn" id="1_qswqq"]
 [ext_resource type="PackedScene" uid="uid://bjullun5pauql" path="res://Entities/Obstacles/Cat Tree/cat_tree.tscn" id="2_eeq0c"]
+[ext_resource type="PackedScene" uid="uid://cc773q1w8b0dw" path="res://Entities/Obstacles/pillar_detection_zone.tscn" id="6_nx5o7"]
 [ext_resource type="PackedScene" uid="uid://dih5q8sqp1gd7" path="res://UI/HUD/score.tscn" id="7_quk0e"]
-[ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="7_tecmv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kv3oj"]
 
@@ -44,10 +44,14 @@ rotation = 0.520108
 unique_name_in_owner = true
 position = Vector2(875, 499)
 
+[node name="PillarDetectionZone" parent="." instance=ExtResource("6_nx5o7")]
+position = Vector2(822, 659)
+
+[node name="PillarDetectionZone3" parent="." instance=ExtResource("6_nx5o7")]
+position = Vector2(529, 635)
+
 [node name="Score" parent="." instance=ExtResource("7_quk0e")]
 offset_left = 140.0
 offset_top = 4.0
-offset_right = 356.0
-offset_bottom = 37.0
-theme = ExtResource("7_tecmv")
-text = "Score: "
+offset_right = 225.0
+offset_bottom = 27.0

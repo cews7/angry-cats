@@ -1,0 +1,38 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dmspf3hikq1u2"
+path="res://.godot/imported/Designer.otf-400f83e07c008bbc802fa17e1b6a2ec3.fontdata"
+
+[deps]
+
+source_file="res://Assets/fonts/Designer.otf"
+dest_files=["res://.godot/imported/Designer.otf-400f83e07c008bbc802fa17e1b6a2ec3.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=true
+msdf_pixel_range=14
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5j164gf2qjh0"]
+[gd_scene load_steps=8 format=3 uid="uid://c5j164gf2qjh0"]
 
 [ext_resource type="PackedScene" uid="uid://cj1kebq0withr" path="res://Entities/EntityGroups/ProjectileComponents/projectile_components.tscn" id="1_73up6"]
 [ext_resource type="Script" path="res://Levels/level_two.gd" id="1_q5c2a"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bjullun5pauql" path="res://Entities/Obstacles/Cat Tree/cat_tree.tscn" id="3_2jc4u"]
 [ext_resource type="PackedScene" uid="uid://beldgl7b7felu" path="res://Entities/Targets/Plushy/plushy.tscn" id="4_6aovg"]
 [ext_resource type="PackedScene" uid="uid://dih5q8sqp1gd7" path="res://UI/HUD/score.tscn" id="6_tnd2d"]
-[ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="7_jci0g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rlb8i"]
 
@@ -49,5 +48,4 @@ offset_left = 119.0
 offset_top = 3.0
 offset_right = 214.0
 offset_bottom = 26.0
-theme = ExtResource("7_jci0g")
 text = "Score: "

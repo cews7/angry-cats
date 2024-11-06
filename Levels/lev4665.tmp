@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl705vlyukii7"]
+[gd_scene load_steps=8 format=3 uid="uid://cl705vlyukii7"]
 
 [ext_resource type="PackedScene" uid="uid://cj1kebq0withr" path="res://Entities/EntityGroups/ProjectileComponents/projectile_components.tscn" id="1_aqe6j"]
 [ext_resource type="PackedScene" uid="uid://c5pfcm13kpqnq" path="res://Stages/ground.tscn" id="1_hwscf"]
 [ext_resource type="Script" path="res://Levels/level_one.gd" id="1_j6t3j"]
 [ext_resource type="PackedScene" uid="uid://beldgl7b7felu" path="res://Entities/Targets/Plushy/plushy.tscn" id="1_qswqq"]
 [ext_resource type="PackedScene" uid="uid://bjullun5pauql" path="res://Entities/Obstacles/Cat Tree/cat_tree.tscn" id="2_eeq0c"]
-[ext_resource type="PackedScene" uid="uid://dih5q8sqp1gd7" path="res://UI/HUD/score.tscn" id="7_quk0e"]
-[ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="7_tecmv"]
+[ext_resource type="PackedScene" uid="uid://cc773q1w8b0dw" path="res://Entities/Obstacles/pillar_detection_zone.tscn" id="6_nx5o7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kv3oj"]
 
@@ -14,7 +13,7 @@
 script = ExtResource("1_j6t3j")
 
 [node name="ProjectileComponents" parent="." instance=ExtResource("1_aqe6j")]
-position = Vector2(219, 822)
+position = Vector2(-21, 299)
 
 [node name="Ground" parent="." instance=ExtResource("1_hwscf")]
 position = Vector2(738, 944)
@@ -31,23 +30,24 @@ metadata/_edit_use_anchors_ = true
 [node name="Obstacles" type="Node" parent="."]
 
 [node name="CatTree2" parent="Obstacles" instance=ExtResource("2_eeq0c")]
-position = Vector2(795, 840)
-rotation = 0.15708
+position = Vector2(769, 618)
 
 [node name="CatTree3" parent="Obstacles" instance=ExtResource("2_eeq0c")]
 position = Vector2(445, 809)
-rotation = 0.520108
+
+[node name="CatTree4" parent="Obstacles" instance=ExtResource("2_eeq0c")]
+position = Vector2(1109, 475)
 
 [node name="Targets" type="Node" parent="."]
 
 [node name="Plushy" parent="Targets" instance=ExtResource("1_qswqq")]
-unique_name_in_owner = true
-position = Vector2(875, 499)
+position = Vector2(1363, 207)
 
-[node name="Score" parent="." instance=ExtResource("7_quk0e")]
-offset_left = 140.0
-offset_top = 4.0
-offset_right = 356.0
-offset_bottom = 37.0
-theme = ExtResource("7_tecmv")
-text = "Score: "
+[node name="PillarDetectionZone" parent="." instance=ExtResource("6_nx5o7")]
+position = Vector2(764, 451)
+
+[node name="PillarDetectionZone2" parent="." instance=ExtResource("6_nx5o7")]
+position = Vector2(1105, 317)
+
+[node name="PillarDetectionZone3" parent="." instance=ExtResource("6_nx5o7")]
+position = Vector2(421, 657)

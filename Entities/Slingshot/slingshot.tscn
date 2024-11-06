@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://bq1vdwo66apyw"]
+[gd_scene load_steps=2 format=3 uid="uid://bq1vdwo66apyw"]
+
+[ext_resource type="Texture2D" uid="uid://slgubukk4m14" path="res://Assets/art/block_rotate_narrow.png" id="1_g0fi0"]
 
 [node name="Slingshot" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 25.0
-offset_bottom = 129.0
-color = Color(0.165656, 0.165656, 0.165656, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 0.53125)
+texture = ExtResource("1_g0fi0")

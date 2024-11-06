@@ -15,6 +15,11 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://Autoloads/game_state.gd"
+SaveManager="*res://Autoloads/save_manager.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -31,3 +36,4 @@ left_mouse_click={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/stretch/mode="disabled"
