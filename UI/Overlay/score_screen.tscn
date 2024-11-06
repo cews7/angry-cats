@@ -18,25 +18,31 @@ script = ExtResource("1_g36i5")
 
 [node name="TotalScoreLabel" type="Label" parent="."]
 unique_name_in_owner = true
-layout_mode = 2
-offset_left = 459.739
-offset_top = 435.721
-offset_right = 1161.74
-offset_bottom = 567.721
-theme_override_font_sizes/font_size = 64
-text = "10000"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -362.0
+offset_top = -66.0
+offset_right = 362.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.68
+anchor_right = 0.5
+anchor_bottom = 0.686
 offset_left = -205.5
-offset_top = -93.5
+offset_top = -45.12
 offset_right = 205.5
-offset_bottom = 93.5
+offset_bottom = 82.5259
 grow_horizontal = 2
 grow_vertical = 2
 
