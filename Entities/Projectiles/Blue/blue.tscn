@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_no3ut"]
 radius = 16.0312
 
-[node name="RegularCat" type="RigidBody2D"]
+[node name="BlueProjectile" type="RigidBody2D"]
 z_index = 1
 input_pickable = true
 max_contacts_reported = 3

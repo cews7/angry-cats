@@ -14,7 +14,7 @@ var launch_force_multiplier: float = 1.0
 
 func _ready():
     set_properties()
-    add_to_group("regular_cat")
+    add_to_group("blue projectile")
     add_to_group("projectiles")  # Add this line
     set_properties()
     body_entered.connect(_on_body_entered)

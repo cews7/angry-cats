@@ -26,7 +26,7 @@ func _process(delta):
         # Use ease_out for smooth deceleration
         var t = ease(animation_time / animation_duration, 0.5)  # You can adjust this ease value
         current_display_score = lerp(0.0, float(target_score), t)
-        total_score_label.text = "Total Score: %d" % int(current_display_score)
+        total_score_label.text = "Total Score:\n%d" % int(current_display_score)
     else:
         # Ensure we end on the exact number
         total_score_label.text = "Total Score: %d" % target_score
