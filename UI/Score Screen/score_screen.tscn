@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://doaav5xf7vpw"]
 
-[ext_resource type="Script" path="res://UI/Overlay/score_screen.gd" id="1_g36i5"]
+[ext_resource type="Script" path="res://UI/Score Screen/score_screen.gd" id="1_g36i5"]
 [ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="1_tuwgb"]
 
 [node name="ScoreScreen" type="Control"]

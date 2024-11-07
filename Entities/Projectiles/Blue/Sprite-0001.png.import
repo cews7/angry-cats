@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vd0e4avnk1bl"
-path="res://.godot/imported/skinny-cat.png-f97065c308ab778edb493a574c141dc5.ctex"
+uid="uid://c5oer063qi2r"
+path="res://.godot/imported/Sprite-0001.png-bda7764539bce832b631e8e870643214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/skinny-cat.png"
-dest_files=["res://.godot/imported/skinny-cat.png-f97065c308ab778edb493a574c141dc5.ctex"]
+source_file="res://Entities/Projectiles/Blue/Sprite-0001.png"
+dest_files=["res://.godot/imported/Sprite-0001.png-bda7764539bce832b631e8e870643214.ctex"]
 
 [params]
 

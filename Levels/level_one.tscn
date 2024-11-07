@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cj1kebq0withr" path="res://Entities/EntityGroups/ProjectileComponents/projectile_components.tscn" id="1_aqe6j"]
 [ext_resource type="PackedScene" uid="uid://c5pfcm13kpqnq" path="res://Stages/ground.tscn" id="1_hwscf"]
 [ext_resource type="Script" path="res://Levels/level_one.gd" id="1_j6t3j"]
-[ext_resource type="PackedScene" uid="uid://beldgl7b7felu" path="res://Entities/Targets/Plushy/plushy.tscn" id="1_qswqq"]
-[ext_resource type="PackedScene" uid="uid://bjullun5pauql" path="res://Entities/Obstacles/Cat Tree/cat_tree.tscn" id="2_eeq0c"]
+[ext_resource type="PackedScene" uid="uid://beldgl7b7felu" path="res://Entities/Targets/Star/star.tscn" id="1_qswqq"]
+[ext_resource type="PackedScene" uid="uid://bjullun5pauql" path="res://Entities/Obstacles/Bouncy Pillar/bouncy_pillar.tscn" id="2_eeq0c"]
 [ext_resource type="PackedScene" uid="uid://dih5q8sqp1gd7" path="res://UI/HUD/score.tscn" id="7_quk0e"]
 [ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="7_tecmv"]
 
@@ -22,25 +22,19 @@ position = Vector2(738, 944)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 shape = SubResource("WorldBoundaryShape2D_kv3oj")
 
-[node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "reset scene"
-metadata/_edit_use_anchors_ = true
-
 [node name="Obstacles" type="Node" parent="."]
 
-[node name="CatTree2" parent="Obstacles" instance=ExtResource("2_eeq0c")]
+[node name="BouncyPillar1" parent="Obstacles" instance=ExtResource("2_eeq0c")]
 position = Vector2(795, 840)
 rotation = 0.15708
 
-[node name="CatTree3" parent="Obstacles" instance=ExtResource("2_eeq0c")]
+[node name="BouncyPillar2" parent="Obstacles" instance=ExtResource("2_eeq0c")]
 position = Vector2(445, 809)
 rotation = 0.520108
 
 [node name="Targets" type="Node" parent="."]
 
-[node name="Plushy" parent="Targets" instance=ExtResource("1_qswqq")]
+[node name="Star" parent="Targets" instance=ExtResource("1_qswqq")]
 unique_name_in_owner = true
 position = Vector2(875, 499)
 

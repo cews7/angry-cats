@@ -1,8 +1,8 @@
 extends Area2D
 
 signal score_updated(score: int)
-signal plushy_hit
-var plushy_score = 1000
+signal star_hit
+var star_value = 1000
 var rotation_speed = PI / 2.5  # Rotate 180 degrees in 5.5 seconds
 @onready var scoring_rings: Node2D = $ScoringRings
 @onready var sprite: Sprite2D = $Sprite2D
@@ -15,8 +15,8 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("projectiles"):
 		if body.can_score():
-			emit_signal("plushy_hit")
-			emit_signal("score_updated", scoring_rings.current_score + plushy_score)
+			emit_signal("star_hit")
+			emit_signal("score_updated", scoring_rings.current_score + star_value)
 			queue_free()
 
 func _on_score_updated(score: int):

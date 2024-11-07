@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjullun5pauql"]
 
-[ext_resource type="Script" path="res://Entities/Obstacles/Cat Tree/cat_tree.gd" id="1_da6vv"]
+[ext_resource type="Script" path="res://Entities/Obstacles/Bouncy Pillar/bouncy_pillar.gd" id="1_da6vv"]
 [ext_resource type="Texture2D" uid="uid://dpcr1bm7fnlyi" path="res://Assets/art/block_large.png" id="2_vfi8v"]
-[ext_resource type="PackedScene" uid="uid://ck1pw3x6y8hj5" path="res://UI/Physics Controls/pillar_control.tscn" id="3_qppro"]
+[ext_resource type="PackedScene" uid="uid://ck1pw3x6y8hj5" path="res://UI/Pillar Controls/pillar_control.tscn" id="3_qppro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g13kj"]
 size = Vector2(73.75, 107)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck1pw3x6y8hj5"]
 
-[ext_resource type="Script" path="res://UI/Physics Controls/pillar_control.gd" id="1_k5hvq"]
+[ext_resource type="Script" path="res://UI/Pillar Controls/pillar_control.gd" id="1_k5hvq"]
 [ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="2_3smvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnoij"]

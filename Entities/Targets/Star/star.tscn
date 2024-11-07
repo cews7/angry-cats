@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://beldgl7b7felu"]
 
-[ext_resource type="Script" path="res://Entities/Targets/Plushy/plushy.gd" id="1_0ql8q"]
+[ext_resource type="Script" path="res://Entities/Targets/Star/star.gd" id="1_0ql8q"]
 [ext_resource type="Texture2D" uid="uid://br3kb3tisfvww" path="res://Assets/art/star.png" id="2_fe6r0"]
-[ext_resource type="PackedScene" uid="uid://33s8yd6v0fnh" path="res://Entities/ScoringRings/scoring_rings.tscn" id="3_siyek"]
+[ext_resource type="PackedScene" uid="uid://33s8yd6v0fnh" path="res://Entities/Scoring Rings/scoring_rings.tscn" id="3_siyek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fw3hw"]
 size = Vector2(28, 28)
