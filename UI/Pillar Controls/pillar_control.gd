@@ -13,22 +13,17 @@ func setup(instance_id: int) -> void:
     my_instance_id = instance_id
     if bounce_slider:
         bounce_slider.value = current_bounce
-        update_bounce_display()
 
 func _ready() -> void:
     # set slider values
     bounce_slider.min_value = min_bounce
     bounce_slider.max_value = max_bounce
     bounce_slider.value = current_bounce
-    update_bounce_display()
     # Connect the slider's value_changed signal
     bounce_slider.value_changed.connect(_on_slider_value_changed)
 
 func _on_slider_value_changed(value: float) -> void:
     current_bounce = value
     bounce_value_changed.emit(current_bounce / 100.0, my_instance_id)  # Convert to 0-1 range when emitting
-    update_bounce_display()
 
-func update_bounce_display() -> void:
-    # current_bounce is already in percentage (0-100), so use it directly
-    bounce_value_label.text = "[color=white]" + str(current_bounce) + "%[/color]"
+

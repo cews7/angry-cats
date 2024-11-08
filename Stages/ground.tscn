@@ -11,3 +11,6 @@ script = ExtResource("1_sqd2l")
 [node name="CollisionShapeD2" type="CollisionShape2D" parent="."]
 position = Vector2(453, 648)
 shape = SubResource("WorldBoundaryShape2D_k63bq")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(1, -7)

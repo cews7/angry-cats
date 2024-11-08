@@ -38,18 +38,22 @@ func _on_emit_timer_timeout() -> void:
 func _emit_bounce_indicator() -> void:
     if bounce_force > 0:  # Only emit if pillar has some bounce force
         var bounce_indicator = bounce_indicator_scene.instantiate()
-        add_child(bounce_indicator)
-        bounce_indicator.global_position = global_position + Vector2.UP * 50  # Adjust Y offset as needed
+        get_tree().get_root().add_child(bounce_indicator)
         
-        # Scale the ring properties based on bounce force
+        # Position above pillar
+        bounce_indicator.global_position = global_position + Vector2.UP.rotated(rotation) * 50
+        
+        # Match pillar's rotation
+        bounce_indicator.rotation = rotation
+        
+        # Calculate intensity for animation speed
         var intensity = bounce_force / 2000.0  # Convert to 0-1 range
-        bounce_indicator.modulate.a = 0.2 + (intensity * 0.8)  # More opacity with more force
-        bounce_indicator.play_animation()
+        bounce_indicator.play_animation(intensity)
 
 # Match the signal parameters exactly
 func _on_bounce_value_changed(value: float, id: int) -> void:
     if id == instance_id:
-        bounce_force = value * 1600.0
+        bounce_force = value * 1300.0
 
 func _on_bounce_area_entered(body: Node2D) -> void:
     if body is BaseProjectile:

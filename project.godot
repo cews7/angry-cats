@@ -13,7 +13,6 @@ config_version=5
 config/name="Stellabounce"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
 
 [autoload]
 

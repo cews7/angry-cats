@@ -13,36 +13,172 @@ grow_vertical = 2
 theme = ExtResource("1_edsmv")
 script = ExtResource("1_cn2oe")
 
-[node name="BoxContainer" type="BoxContainer" parent="."]
+[node name="UIContainer" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.0
-offset_top = -15.5
-offset_right = 91.0
-offset_bottom = 15.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Beginner" type="Label" parent="UIContainer"]
+layout_mode = 2
+anchor_left = 0.188
+anchor_top = 0.098
+anchor_right = 0.188
+anchor_bottom = 0.197
+offset_left = -286.96
+offset_top = -0.100006
+offset_right = 287.04
+offset_bottom = -0.150009
+theme_override_colors/font_color = Color(0.138347, 0.746623, 0.878557, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "BEGINNER"
+
+[node name="intermediate" type="Label" parent="UIContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.529
+anchor_top = 0.353
+anchor_right = 0.529
+anchor_bottom = 0.452
+offset_left = -379.68
+offset_top = -0.350006
+offset_right = 378.32
+offset_bottom = -0.400024
+theme_override_colors/font_color = Color(0.138869, 0.509126, 0.69495, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "intermediate"
+
+[node name="Advanced" type="Label" parent="UIContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794
+anchor_top = 0.598
+anchor_right = 0.794
+anchor_bottom = 0.697
+offset_left = -277.48
+offset_top = -0.100037
+offset_right = 278.52
+offset_bottom = -0.150024
+theme_override_colors/font_color = Color(0.0875183, 0.432346, 0.676521, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "advanced"
+
+[node name="BoxContainer" type="BoxContainer" parent="UIContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189
+anchor_top = 0.297
+anchor_right = 0.189
+anchor_bottom = 0.297
+offset_left = -229.88
+offset_top = -78.15
+offset_right = 231.12
+offset_bottom = 77.85
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UIContainer/BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
 
-[node name="LevelOneButton" type="Button" parent="BoxContainer/HBoxContainer"]
+[node name="LevelOneButton" type="Button" parent="UIContainer/BoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "level 1"
+theme_override_font_sizes/font_size = 96
+text = "1"
+flat = true
 
-[node name="LevelTwoButton" type="Button" parent="BoxContainer/HBoxContainer"]
+[node name="LevelTwoButton" type="Button" parent="UIContainer/BoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "level 2"
+theme_override_font_sizes/font_size = 96
+text = "2"
+flat = true
 
-[node name="LevelThreeButton" type="Button" parent="BoxContainer/HBoxContainer"]
+[node name="LevelThreeButton" type="Button" parent="UIContainer/BoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "level 3"
+theme_override_font_sizes/font_size = 96
+text = "3"
+flat = true
+
+[node name="BoxContainer2" type="BoxContainer" parent="UIContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.538
+anchor_top = 0.534
+anchor_right = 0.538
+anchor_bottom = 0.534
+offset_left = -255.96
+offset_top = -51.3
+offset_right = 257.04
+offset_bottom = 50.7
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIContainer/BoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="LevelFourButton" type="Button" parent="UIContainer/BoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "4"
+flat = true
+
+[node name="LevelFiveButton" type="Button" parent="UIContainer/BoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "5"
+flat = true
+
+[node name="LevelSixButton" type="Button" parent="UIContainer/BoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "6"
+flat = true
+
+[node name="BoxContainer3" type="BoxContainer" parent="UIContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.799
+anchor_top = 0.775
+anchor_right = 0.799
+anchor_bottom = 0.775
+offset_left = -225.08
+offset_top = -51.2501
+offset_right = 225.92
+offset_bottom = 50.7499
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIContainer/BoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="LevelSevenButton" type="Button" parent="UIContainer/BoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "7"
+flat = true
+
+[node name="LevelEightButton" type="Button" parent="UIContainer/BoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "8"
+flat = true
+
+[node name="LevelNineButton" type="Button" parent="UIContainer/BoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "9"
+flat = true

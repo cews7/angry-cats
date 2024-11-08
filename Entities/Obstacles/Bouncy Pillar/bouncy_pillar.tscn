@@ -10,7 +10,7 @@ size = Vector2(73.75, 107)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kygmb"]
 size = Vector2(83, 16.4033)
 
-[node name="CatTree" type="StaticBody2D"]
+[node name="BouncyPillar" type="StaticBody2D"]
 position = Vector2(-4, -1)
 script = ExtResource("1_da6vv")
 
@@ -30,4 +30,4 @@ position = Vector2(6, -51.2016)
 shape = SubResource("RectangleShape2D_kygmb")
 
 [node name="PillarControl" parent="." instance=ExtResource("3_qppro")]
-position = Vector2(-5, -15)
+position = Vector2(4, -17)
