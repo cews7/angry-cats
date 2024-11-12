@@ -2,16 +2,24 @@ extends Node2D
 
 signal out_of_projectiles
 
-@onready var projectiles: Array[RigidBody2D] = []
+@onready var blue_projectile: PackedScene = preload("res://Entities/Projectiles/Blue/blue.tscn")
 @onready var sling: Node2D = $Slingshot
 @onready var pull_line: Line2D = $PullLine
 @onready var trajectory_line: PackedScene = preload("res://Entities/Projectiles/trajectory_line.tscn")
+
+var level_projectile_counts = {
+    "level_one": 5,
+    "level_two": 4,
+    "level_three": 3,
+}
 
 var trajectory_line_instance: Line2D
 var active_projectile: RigidBody2D = null
 var dragging = false
 var max_drag_distance = 100
-var launch_power_multiplier = 2.0  # Replace the hardcoded *2 with this
+var launch_power_multiplier = 2.2  # Replace the hardcoded *2 with this
+var projectiles: Array[RigidBody2D] = []
+
 
 var current_drag_direction := Vector2.ZERO
 var current_drag_power := 0.0
@@ -19,8 +27,21 @@ var current_drag_power := 0.0
 func _ready():
     out_of_projectiles.connect(get_parent()._on_projectile_components_empty)
     pull_line.hide()
+
+    # Initialize projectiles based on current level
+    var parent_scene_file = get_parent().scene_file_path
+    var level_name = parent_scene_file.get_file().get_basename()
+    var projectile_count = level_projectile_counts.get(level_name)
+    
+    # Initialize projectiles
+    for i in range(projectile_count):
+        var projectile_instance = blue_projectile.instantiate()
+        add_child(projectile_instance)
+        add_projectile(projectile_instance)
+
     for projectile in projectiles:
         projectile.freeze = true
+
     trajectory_line_instance = trajectory_line.instantiate()
     add_child(trajectory_line_instance)
 
