@@ -45,20 +45,8 @@ func _ready():
 
     trajectory_line_instance = trajectory_line.instantiate()
     add_child(trajectory_line_instance)
+    setup_line_trajectory()
 
-    # Create a gradient for the trajectory line
-    var gradient = Gradient.new()
-    gradient.colors = [Color(1, 1, 1, 1), Color(1, 1, 1, 0.2)]  # Solid white to transparent white
-    trajectory_line_instance.width = 5.0
-    trajectory_line_instance.gradient = gradient
-    trajectory_line_instance.z_index = 1000
-    trajectory_line_instance.show()
-
-    # Add test points in world space
-    trajectory_line_instance.clear_points()
-    trajectory_line_instance.add_point(sling.global_position)  # Start at sling
-    trajectory_line_instance.add_point(sling.global_position + Vector2(100, -100))  # Up and right
-    trajectory_line_instance.add_point(sling.global_position + Vector2(200, 0))  # Back to original height
 
 func _process(_delta):
     if dragging and active_projectile:
@@ -154,6 +142,15 @@ func launch_projectile():
 
         # Reset the projectile's position to the sling position before launch
         active_projectile.global_position = sling.global_position
+
+func setup_line_trajectory():
+    # Create a gradient for the trajectory line
+    var gradient = Gradient.new()
+    gradient.colors = [Color(1, 1, 1, 1), Color(1, 1, 1, 0.2)]  # Solid white to transparent white
+    trajectory_line_instance.width = 5.0
+    trajectory_line_instance.gradient = gradient
+    trajectory_line_instance.z_index = 1000
+    trajectory_line_instance.show()
 
 func _on_projectile_hit_ground(projectile: RigidBody2D):
     remove_projectile(projectile)
