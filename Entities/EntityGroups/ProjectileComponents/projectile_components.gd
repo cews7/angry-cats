@@ -8,8 +8,8 @@ signal out_of_projectiles
 @onready var trajectory_line: PackedScene = preload("res://Entities/Projectiles/trajectory_line.tscn")
 
 var level_projectile_counts = {
-    "level_one": 5,
-    "level_two": 4,
+    "level_one": 4,
+    "level_two": 2,
     "level_three": 3,
 }
 
@@ -37,6 +37,7 @@ func _ready():
     for i in range(projectile_count):
         var projectile_instance = blue_projectile.instantiate()
         add_child(projectile_instance)
+        projectile_instance.projectile_hit_ground.connect(_on_projectile_hit_ground)
         add_projectile(projectile_instance)
 
     for projectile in projectiles:
@@ -154,3 +155,5 @@ func launch_projectile():
         # Reset the projectile's position to the sling position before launch
         active_projectile.global_position = sling.global_position
 
+func _on_projectile_hit_ground(projectile: RigidBody2D):
+    remove_projectile(projectile)

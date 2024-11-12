@@ -1,6 +1,8 @@
 class_name BaseProjectile
 extends RigidBody2D
 
+signal projectile_hit_ground
+
 @export var base_damage: float = 10.0
 @export var mass_factor: float = 1.0
 @export var velocity_factor: float = 0.01
@@ -46,9 +48,7 @@ func _on_body_entered(body):
         physics_material.friction = 0.2
         set_physics_material_override(physics_material)
     elif body.is_in_group("ground"):
-        # Get reference to ProjectileComponents
-        var projectile_components = get_parent()
-        projectile_components.remove_projectile(self)
+        projectile_hit_ground.emit(self)
 
 func can_score() -> bool:
     return has_hit_obstacle
