@@ -66,6 +66,47 @@ func _process(_delta):
     else:
         trajectory_line_instance.hide()
 
+
+func load_next_projectile() -> void:
+    # Wait to load next projectile until the first has cleared the sling
+    await get_tree().create_timer(0.3).timeout
+    
+    if projectiles.is_empty():
+        return
+    
+    active_projectile = projectiles[0]
+    active_projectile.freeze = true
+    active_projectile.is_active = true  # Set the new projectile as active
+    active_projectile.global_position = sling.global_position
+    
+    update_projectile_positions()
+
+func update_projectile_positions():
+    var spacing = 32
+    var start_x = sling.global_position.x - spacing
+    # Skip the first projectile (index 0) if it exists
+    for i in range(1, projectiles.size()):
+        projectiles[i].global_position = Vector2(
+            start_x - (spacing * (i-1)),
+            sling.global_position.y + 110
+        )
+
+func handle_mouse_press():
+    var mouse_position = get_global_mouse_position()
+
+    for projectile in projectiles:
+        if !projectile.is_active:  # Skip if not the active projectile
+            continue
+            
+        if projectile.freeze:  # Only consider frozen (unused) projectiles
+            var shape = projectile.get_node("CollisionShape2D").shape
+            var local_mouse_position = projectile.to_local(mouse_position)
+
+            if shape.get_class() == "CircleShape2D":
+                if local_mouse_position.length() <= shape.radius:
+                    start_dragging(projectile)
+                    return
+
 func handle_mouse_release():
     if dragging:
         launch_projectile()
@@ -75,14 +116,24 @@ func handle_mouse_release():
     trajectory_line_instance.hide()
 
 func _unhandled_input(event):
-    if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-        if event.pressed:
-            handle_mouse_press()
-        elif event.is_released():
-            handle_mouse_release()
+    if event is InputEventMouseButton:
+        match event.button_index:
+            MOUSE_BUTTON_LEFT:
+                if event.pressed:
+                    handle_mouse_press()
+                elif event.is_released():
+                    handle_mouse_release()
+            MOUSE_BUTTON_RIGHT:
+                if event.pressed:
+                    reset_active_projectile()
 
 func remove_projectile(projectile: RigidBody2D):
     projectiles.erase(projectile)
+    # Disable bouncing when removing projectile
+    var physics_material = PhysicsMaterial.new()
+    physics_material.bounce = 0.0
+    physics_material.friction = 1.0
+    projectile.set_physics_material_override(physics_material)
     if projectiles.size() == 0:
         out_of_projectiles.emit()
 
@@ -90,28 +141,21 @@ func add_projectile(projectile: RigidBody2D):
     projectiles.append(projectile)
     projectile.freeze = true
 
-    # Calculate position for the new projectile
-    var spacing = 32  # Adjust this value to control space between projectiles
-    var start_x = sling.global_position.x - spacing
-    var index = projectiles.size() - 1
-    projectile.global_position = Vector2(start_x - (spacing * index), sling.global_position.y + 110)
-
-func handle_mouse_press():
-    var mouse_position = get_global_mouse_position()
-
-    for projectile in projectiles:
-        if projectile.freeze:  # Only consider frozen (unused) projectiles
-            var shape = projectile.get_node("CollisionShape2D").shape
-            var local_mouse_position = projectile.to_local(mouse_position)
-
-            if shape.get_class() == "CircleShape2D":
-                if local_mouse_position.length() <= shape.radius:
-                    start_dragging(projectile)
-                    return
-            elif shape.get_class() == "RectangleShape2D":
-                if abs(local_mouse_position.x) <= shape.size.x / 2 and abs(local_mouse_position.y) <= shape.size.y / 2:
-                    start_dragging(projectile)
-                    return
+    # If this is the first projectile, position it in the slingshot and set as active
+    if projectiles.size() == 1:
+        projectile.global_position = sling.global_position
+        projectile.is_active = true
+        active_projectile = projectile
+    else:
+        projectile.is_active = false  # Ensure subsequent projectiles start inactive
+        # Calculate position for the new projectile
+        var spacing = 32
+        var start_x = sling.global_position.x - spacing
+        var index = projectiles.size() - 2
+        projectile.global_position = Vector2(
+            start_x - (spacing * index), 
+            sling.global_position.y + 110
+        )
 
 func start_dragging(projectile: RigidBody2D):
     active_projectile = projectile
@@ -137,9 +181,9 @@ func launch_projectile():
     if active_projectile:
         var launch_vector = sling.global_position - active_projectile.global_position
         active_projectile.freeze = false
+        active_projectile.is_active = false  # Deactivate the projectile when launched
         var launch_power = launch_vector.length() * launch_power_multiplier
         active_projectile.launch(launch_vector.normalized(), launch_power)
-
         # Reset the projectile's position to the sling position before launch
         active_projectile.global_position = sling.global_position
 
@@ -154,3 +198,11 @@ func setup_line_trajectory():
 
 func _on_projectile_hit_ground(projectile: RigidBody2D):
     remove_projectile(projectile)
+    load_next_projectile()
+
+func reset_active_projectile():
+    if active_projectile:
+        active_projectile.global_position = sling.global_position
+        dragging = false
+        pull_line.hide()
+        trajectory_line_instance.hide()

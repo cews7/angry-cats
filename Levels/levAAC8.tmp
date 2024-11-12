@@ -29,7 +29,7 @@ position = Vector2(759, 789)
 rotation = 0.15708
 
 [node name="BouncyPillar2" parent="Obstacles" instance=ExtResource("2_eeq0c")]
-position = Vector2(1191, 722)
+position = Vector2(1080, 680)
 rotation = -0.84823
 
 [node name="Targets" type="Node" parent="."]

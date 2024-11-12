@@ -13,6 +13,7 @@ var has_hit_obstacle = false
 var impact_modifier: float = 1.0
 var max_velocity: float = 200.0
 var launch_force_multiplier: float = 1.0
+var is_active = false
 
 func _ready():
     set_properties()
@@ -22,14 +23,14 @@ func _ready():
     body_entered.connect(_on_body_entered)
 
 func set_properties():
-    mass = 6.0  # Increased from 5.0
-    impact_modifier = 1.2  # Increased from 1.0
-    max_velocity = 1600.0  # Increased from 1200.0 (about 33% increase)
-    launch_force_multiplier = 5.3  # Increased from 4.0 (about 33% increase)
+    mass = 6.0  
+    impact_modifier = 1.2  
+    max_velocity = 1600.0 
+    launch_force_multiplier = 5.3 
 
-    base_damage = 10.0  # Standard base damage
-    mass_factor = 1.0  # Standard mass factor
-    velocity_factor = 0.02  # Slightly higher velocity factor for balanced impact
+    base_damage = 10.0 
+    mass_factor = 1.0 
+    velocity_factor = 0.02 
 
     # Adjust physics material for less bouncing
     var physics_material = PhysicsMaterial.new()
@@ -72,7 +73,7 @@ func apply_impact(body: Node, force: float):
         var impact_direction = linear_velocity.normalized()
         var impulse = impact_direction * force
         body.apply_central_impulse(impulse)
-	
+
     spawn_impact_effect(force)
 
 func spawn_impact_effect(_force: float):
