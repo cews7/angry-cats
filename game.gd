@@ -5,6 +5,7 @@ var level_two_scene = preload("res://Levels/level_two.tscn")
 var level_three_scene = preload("res://Levels/level_three.tscn")
 
 @onready var menu_manager = %MenuManager
+@onready var game_camera = %GameCamera
 
 func _ready():
 	menu_manager.level_one_button_pressed.connect(_on_level_one_button_pressed)

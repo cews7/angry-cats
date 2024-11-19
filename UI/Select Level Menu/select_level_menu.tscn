@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brmpexnecc4eg"]
+[gd_scene load_steps=4 format=3 uid="uid://brmpexnecc4eg"]
 
 [ext_resource type="Script" path="res://UI/Select Level Menu/select_level_menu.gd" id="1_cn2oe"]
 [ext_resource type="Theme" uid="uid://2rt3ux601me2" path="res://UI/ui_theme.tres" id="1_edsmv"]
+[ext_resource type="Texture2D" uid="uid://bidve5xu4ybeu" path="res://Assets/art/simple-lock.svg" id="3_qby67"]
 
 [node name="SelectLevelMenu" type="Control"]
 layout_mode = 3
@@ -24,14 +25,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Beginner" type="Label" parent="UIContainer"]
 layout_mode = 2
-anchor_left = 0.188
-anchor_top = 0.098
-anchor_right = 0.188
-anchor_bottom = 0.197
-offset_left = -286.96
-offset_top = -0.100006
-offset_right = 287.04
-offset_bottom = -0.150009
+anchor_left = 0.5
+anchor_top = 0.187
+anchor_right = 0.5
+anchor_bottom = 0.187
+offset_left = -274.0
+offset_top = -46.78
+offset_right = 300.0
+offset_bottom = 47.22
 theme_override_colors/font_color = Color(0.138347, 0.746623, 0.878557, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
@@ -40,15 +41,15 @@ text = "BEGINNER"
 [node name="intermediate" type="Label" parent="UIContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.529
-anchor_top = 0.353
-anchor_right = 0.529
-anchor_bottom = 0.452
-offset_left = -379.68
-offset_top = -0.350006
-offset_right = 378.32
-offset_bottom = -0.400024
-theme_override_colors/font_color = Color(0.138869, 0.509126, 0.69495, 1)
+anchor_left = 0.5
+anchor_top = 0.481
+anchor_right = 0.5
+anchor_bottom = 0.481
+offset_left = -431.0
+offset_top = -47.14
+offset_right = 327.0
+offset_bottom = 46.86
+theme_override_colors/font_color = Color(0.643137, 0.643137, 0.72549, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
 text = "intermediate"
@@ -56,15 +57,15 @@ text = "intermediate"
 [node name="Advanced" type="Label" parent="UIContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.794
-anchor_top = 0.598
-anchor_right = 0.794
-anchor_bottom = 0.697
-offset_left = -277.48
-offset_top = -0.100037
-offset_right = 278.52
-offset_bottom = -0.150024
-theme_override_colors/font_color = Color(0.0875183, 0.432346, 0.676521, 1)
+anchor_left = 0.526
+anchor_top = 0.752
+anchor_right = 0.526
+anchor_bottom = 0.752
+offset_left = -277.92
+offset_top = -46.88
+offset_right = 278.08
+offset_bottom = 47.12
+theme_override_colors/font_color = Color(0.643137, 0.643137, 0.72549, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
 text = "advanced"
@@ -72,14 +73,14 @@ text = "advanced"
 [node name="BoxContainer" type="BoxContainer" parent="UIContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.189
-anchor_top = 0.297
-anchor_right = 0.189
-anchor_bottom = 0.297
-offset_left = -229.88
-offset_top = -78.15
-offset_right = 231.12
-offset_bottom = 77.85
+anchor_left = 0.5
+anchor_top = 0.336
+anchor_right = 0.5
+anchor_bottom = 0.336
+offset_left = -117.0
+offset_top = -77.84
+offset_right = 344.0
+offset_bottom = 78.16
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -112,14 +113,14 @@ flat = true
 [node name="BoxContainer2" type="BoxContainer" parent="UIContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.538
-anchor_top = 0.534
-anchor_right = 0.538
-anchor_bottom = 0.534
-offset_left = -255.96
-offset_top = -51.3
-offset_right = 257.04
-offset_bottom = 50.7
+anchor_left = 0.5
+anchor_top = 0.627
+anchor_right = 0.5
+anchor_bottom = 0.627
+offset_left = -348.0
+offset_top = -51.38
+offset_right = 314.0
+offset_bottom = 50.62
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -127,6 +128,10 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
+
+[node name="TextureRect" type="TextureRect" parent="UIContainer/BoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_qby67")
 
 [node name="LevelFourButton" type="Button" parent="UIContainer/BoxContainer2/HBoxContainer"]
 layout_mode = 2
@@ -149,14 +154,14 @@ flat = true
 [node name="BoxContainer3" type="BoxContainer" parent="UIContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.799
-anchor_top = 0.775
-anchor_right = 0.799
-anchor_bottom = 0.775
-offset_left = -225.08
-offset_top = -51.2501
-offset_right = 225.92
-offset_bottom = 50.7499
+anchor_left = 0.498
+anchor_top = 0.871
+anchor_right = 0.498
+anchor_bottom = 0.871
+offset_left = -326.16
+offset_top = -50.7401
+offset_right = 324.84
+offset_bottom = 51.2599
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -164,6 +169,10 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 100
+
+[node name="TextureRect" type="TextureRect" parent="UIContainer/BoxContainer3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_qby67")
 
 [node name="LevelSevenButton" type="Button" parent="UIContainer/BoxContainer3/HBoxContainer"]
 layout_mode = 2

@@ -30,7 +30,6 @@ func _ready():
     
     save_button.pressed.connect(_on_save_pressed)
 	
-
 func _on_color_changed(_value):
     update_preview()
 

@@ -2,6 +2,7 @@ extends Node
 
 var total_score: int = 0
 var background_color: Color = Color(0, 0, 0)
+var max_possible_score: int = 60
 
 signal background_color_changed(new_color: Color)
 
@@ -24,6 +25,10 @@ func reset_score() -> void:
 
 func get_background_color() -> Color:
     return background_color
+
+
+func get_max_possible_score() -> int:
+    return max_possible_score
 
 func set_background_color(color: Color) -> void:
     background_color = color

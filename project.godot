@@ -22,7 +22,8 @@ SaveManager="*res://Autoloads/save_manager.gd"
 [display]
 
 window/size/viewport_width=1920
-window/size/viewport_height=950
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [input]
 
@@ -34,5 +35,6 @@ left_mouse_click={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/stretch/mode="disabled"

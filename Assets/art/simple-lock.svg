@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lock Body -->
+  <rect x="25" y="40" width="50" height="45" rx="5" fill="#444444"/>
+  
+  <!-- Lock Shackle -->
+  <path d="M35 40 L35 25 Q50 25 65 25 L65 40" 
+        stroke="#444444" 
+        stroke-width="8" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Keyhole -->
+  <circle cx="50" cy="60" r="5" fill="#222222"/>
+  <rect x="48" y="60" width="4" height="10" fill="#222222"/>
+</svg>

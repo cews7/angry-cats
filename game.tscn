@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkagguulqfca8"]
+[gd_scene load_steps=4 format=3 uid="uid://bkagguulqfca8"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2gbkl"]
 [ext_resource type="Script" path="res://UI/menu_manager.gd" id="1_mtgos"]
+[ext_resource type="Script" path="res://game_camera.gd" id="3_0avmr"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_2gbkl")
@@ -9,3 +10,8 @@ script = ExtResource("1_2gbkl")
 [node name="MenuManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_mtgos")
+
+[node name="GameCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(961, 467)
+script = ExtResource("3_0avmr")
