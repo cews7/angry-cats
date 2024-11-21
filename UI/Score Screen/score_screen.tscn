@@ -76,8 +76,3 @@ text = "Restart Game"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Main Menu"
-
-[node name="ExitGameButton" type="Button" parent="BoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Exit Game"

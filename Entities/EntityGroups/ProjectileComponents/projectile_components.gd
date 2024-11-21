@@ -129,6 +129,7 @@ func _unhandled_input(event):
 
 func remove_projectile(projectile: RigidBody2D):
     projectiles.erase(projectile)
+    projectile.queue_free()
     # Disable bouncing when removing projectile
     var physics_material = PhysicsMaterial.new()
     physics_material.bounce = 0.0

@@ -58,8 +58,3 @@ text = "Play"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Settings"
-
-[node name="ExitButton" type="Button" parent="BoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Exit"

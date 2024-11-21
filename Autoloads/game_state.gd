@@ -65,3 +65,7 @@ func load_settings() -> void:
                 color_data["g"],
                 color_data["b"]
             )
+
+func restart_game() -> void:
+    reset_score()
+    get_tree().change_scene_to_file("res://game.tscn")
